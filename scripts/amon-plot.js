@@ -21,9 +21,9 @@ function nextText(escolhas) {
     var pagina = document.getElementById("text")
 
     if (textObject[index][0] == "<") {
-        pagina.innerHTML = textObject[index];
+        pagina.innerHTML = `<article>${textObject[index]}</article>`;
     } else {
-        pagina.innerHTML = `<p>${textObject[index]}</p>`;
+        pagina.innerHTML = `<article><p>${textObject[index]}</p></article>`;
     }
 
     nextScene(sceneObject, index)
@@ -54,9 +54,10 @@ function isLastPage(ultimaPagina, theEnd, escolhas) {
     } else if (ultimaPagina) {
         var choices = document.getElementById("choices");
         choices.innerHTML =
-            `
+            `<article>
                 <p>A - ${escolhas[0]}</p>
                 <p>B - ${escolhas[1]}</p>
+            </article>
             `
         var nextText_btn = document.getElementById("nextText_btn");
         nextText_btn.innerHTML = "<button onclick=janelaDeEscolha()>Escolher</button>";
@@ -360,11 +361,11 @@ var plotAmon = {
 
 var plotScene = {
     textAmon1: {
-        pag2: ['floresta-noite', '../images/pictures/forest1-nighttime.png'],
+        pag2: ['floresta-noite', '../../images/pictures/forest1-nighttime.png'],
     },
     textAmon11: {
-        pag1: ['floresta-dia', '../images/pictures/forest1-daytime.png'],
-        pag2: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['floresta-dia', '../../images/pictures/forest1-daytime.png'],
+        pag2: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
 
     },
     textAmon111: {
@@ -375,27 +376,27 @@ var plotScene = {
     },
     textAmon1112: {
         pag1: ['covil do dragão', ''],
-        pag13: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag13: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
     },
 
     textAmon112: {
-        pag1: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
         pag3: ['covil do dragão', ''],
     },
     textAmon1121: {
         pag1: ['covil do dragão', ''],
-        pag13: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag13: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
     },
     textAmon1122: {
         pag1: ['covil do dragão', ''],
     },
 
     textAmon12: {
-        pag2: ['floresta-dia', '../images/pictures/forest1-daytime.png'],
-        pag9: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag2: ['floresta-dia', '../../images/pictures/forest1-daytime.png'],
+        pag9: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
     },
     textAmon121: {
-        pag1: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
         pag17: ['covil do dragão', ''],
     },
     textAmon1211: {
@@ -403,13 +404,13 @@ var plotScene = {
     },
     textAmon1212: {
         pag1: ['covil do dragão', ''],
-        pag4: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag4: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
     },
     textAmon12121: {
-        pag1: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
     },
     textAmon12122: {
-        pag1: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
     },
 
     textAmon122: {
