@@ -360,10 +360,10 @@ var plotAmon = {
 
 var plotScene = {
     textAmon1: {
-        pag2: ['floresta-noite', '../images/pictures/forest-nighttime.png'],
+        pag2: ['floresta-noite', '../images/pictures/forest1-nighttime.png'],
     },
     textAmon11: {
-        pag1: ['floresta-dia', '../images/pictures/forest-daytime-v2.png'],
+        pag1: ['floresta-dia', '../images/pictures/forest1-daytime.png'],
         pag2: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
 
     },
@@ -391,7 +391,7 @@ var plotScene = {
     },
 
     textAmon12: {
-        pag2: ['floresta-dia', '../images/pictures/forest-daytime.png'],
+        pag2: ['floresta-dia', '../images/pictures/forest1-daytime.png'],
         pag9: ['entrada-caverna', '../images/pictures/mountain-entrance-ref.jpg'],
     },
     textAmon121: {
