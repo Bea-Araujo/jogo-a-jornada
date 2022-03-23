@@ -1,0 +1,162 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(../images/pictures/runes.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+main p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.747);
+    backdrop-filter: blur(5px);
+    color:black;
+    transition:  1.5s;
+    text-decoration: none;
+}
+
+main .linha-meio{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+main div a{
+    /* position: absolute; */
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.747);
+    backdrop-filter: blur(5px);
+    color:black;
+    transition:  1.5s;
+    text-decoration: none;
+}
+
+main #sophie, main #amon, main #tess{
+    position: relative;
+}
+main #sophie a{
+    bottom: 237px;
+    left: 164px;
+}
+
+main #earth{
+    content: "";
+    background-color: rgb(225, 255, 52);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);   
+    animation: shineGreen 4s infinite ease-in-out;
+}
+
+main #sophie a:hover{
+    background-color: rgba(104, 167, 2, 0.822);
+}
+
+main #amon a{
+    bottom: 90px;
+    left: 335px;
+}
+
+main #fire{
+    content: "";
+    background-color: rgb(255 225 52);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  
+    animation: shineRed 4s infinite ease-in-out;
+}
+
+main #amon a:hover{
+    background-color: rgba(167, 2, 2, 0.822);
+}
+
+main #tess a{
+    bottom: 237px;
+    left: 482px;
+}
+
+main #light{
+    content: "";
+    background-color: rgb(255 225 52);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);   
+    animation: shineYellow 4s infinite ease-in-out;
+}
+
+main #tess a:hover{
+    background-color: rgba(255, 255, 1, 0.822);
+}
+
+@keyframes shineRed{
+    0% {
+        box-shadow: 0 0 8px 6px rgb(255 225 52), 
+                    0 0 15px 15px rgb(255 145 0), 
+                    0 0 17px 29px red
+                }
+    50% {
+        box-shadow: 0 0 16px 13px rgb(255 225 52), 
+                    0 0 30px 31px rgb(255 145 0), 
+                    0 0 34px 58px red;
+                }
+    100%{
+        box-shadow: 0 0 8px 6px rgb(255 225 52), 
+                    0 0 15px 15px rgb(255 145 0), 
+                    0 0 17px 29px red;}
+}
+
+@keyframes shineGreen{
+    0% {
+        box-shadow: 0 0 8px 6px rgb(225, 255, 52), 
+                    0 0 15px 15px rgb(166, 255, 0), 
+                    0 0 17px 29px rgb(77, 209, 0);
+                }
+    50% {
+        box-shadow: 0 0 16px 13px rgb(225, 255, 52), 
+                    0 0 30px 31px rgb(166, 255, 0), 
+                    0 0 34px 58px rgb(77, 209, 0);
+                }
+    100%{
+        box-shadow: 0 0 8px 6px rgb(225, 255, 52), 
+                    0 0 15px 15px rgb(166, 255, 0), 
+                    0 0 17px 29px rgb(77, 209, 0);
+                }
+    }
+
+@keyframes shineYellow{
+    0% {
+        box-shadow: 0 0 8px 6px rgb(255, 252, 73), 
+                    0 0 15px 15px rgb(255, 252, 105), 
+                    0 0 17px 29px rgb(254, 255, 169);
+                }
+        50% {
+            box-shadow: 0 0 16px 13px rgb(255, 252, 73), 
+                        0 0 30px 31px rgb(255, 252, 105), 
+                        0 0 34px 58px rgb(254, 255, 169);
+                    }
+        100%{
+            box-shadow: 0 0 8px 6px rgb(255, 252, 73), 
+                    0 0 15px 15px rgb(255, 252, 105), 
+                    0 0 17px 29px rgb(254, 255, 169);
+                    }
+        }

@@ -1,0 +1,151 @@
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 200;
+}
+
+header h1 {
+    color: white;
+    font-size: 50px;
+}
+
+main{
+    /* background-color: rgb(102, 102, 102); */
+    /* background-image: url('../images/pictures/runes.png');
+    background-size: 65%;
+    background-repeat: no-repeat;*/
+    background-position: center;
+    width: 100%;
+    height: 90%;
+    /* margin: 25px auto; */
+    padding: 5px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s;
+}
+
+/* main img{   
+    height: 90%;
+    position: absolute;
+    top: 2%;
+    animation: fade-in 1s ease-in-out;
+} */
+
+main #scene{
+    background-image: url(../images/pictures/runes.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    overflow: hidden;
+}
+
+main #scene img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    animation: fade-in 1s ease-in-out;
+}
+
+main .fade{
+    animation: fade-out 1s ease-in-out;
+}
+
+main #text{
+    background-color: rgba(255, 255, 255, 0.568);
+    padding: 10px;
+    border-radius: 5px 20px 5px 20px;
+    min-height: 100px;
+    backdrop-filter: blur(5px);
+    width: 80%;
+}
+
+main #text p{
+   font-size: 18px;
+}
+
+main #text .speaker{
+    font-family: 'Great Vibes', cursive;
+    font-size: 23px;
+}
+
+main #choices{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+}
+
+main #choices p{
+    background-color: rgba(255, 255, 255, 0.568);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 2px 20px 2px 20px;
+    position: relative;
+}
+
+main #choices p::before{
+    content: '꧁';
+    position: absolute;
+    left: -30px;
+    top: -20px;
+    color: greenyellow;
+}
+
+main #choices p::after{
+    content: '꧂';
+    position: absolute;
+    right: -30px;
+    bottom: -5px;
+    color: greenyellow;
+}
+
+main #choices p::first-letter{
+    font-weight: 500;
+    font-size: 22px;
+}
+
+main #nextText_btn {
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+}
+
+main #nextText_btn button{
+    background-color: rgba(255, 255, 255, 0.705);
+    padding: 10px;
+    border: hidden;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+main #nextText_btn button:hover{
+    background-color: rgba(255, 255, 255, 0.904);
+}
+
+@keyframes fade-in{
+    0% {opacity: 0%;}
+    100%{opacity: 100%;}
+}
+
+@keyframes fade-out{
+    0% {opacity: 100%;}
+    100%{opacity: 0%;}
+}
