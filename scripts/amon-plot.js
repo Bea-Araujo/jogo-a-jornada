@@ -90,15 +90,15 @@ function janelaDeEscolha() {
 
 var plotAmon = {
     textAmon1: {
-        pag1: "Logo após receber sua missão, Amon foi preparar seus itens para levar na viagem, alguns mantimentos, um livro com alguns de seus feitiços favoritos, um mapa, e um pergaminho ou dois.",
-        pag2: "Sua jornada começou pela floresta que rodiava a escola. O sol já estava quase se pondo quando Amon percebeu que havia uma fogueira acesa nas redondezas, logo viu também que havia um grupo de aventureiros montando seu acampamento.",
-        pag3: "Essa não era uma visão incomum, muitas pessoas viajavam de ponta a ponta do continente em busca de aventuras, riquesas ou os dois.",
-        pag4: "Com a mesma facilidade que Amon percebeu o grupo, eles também o perceberam.",
-        pag5: "O jovem aprendiz não era do tipo que se juntaria a um grupo de desconhecidos sem ser convidado, e ainda menos sem haver necessidade, afinal ele estava muito bem preparado para qualquer que fosse o desafio.",
-        pag6: "Entretanto, uma das aventuras não compartilhava do orgulho de Amon e foi logo o convidar para se juntar a eles.",
-        pag7: "<p class='speaker'>Clara</p><p>Olá. Essas roupas... você é um mago, não é mesmo? Você está sozinho, gostaria de se juntar a nós?</p>",
-        pag8: "<p class='speaker'>Clara</p><p>Você está indo para o monte Hagan também não está?</p>",
-        pag9: "<p class='speaker'>Clara</p><p>Você devia se juntar a nós. É perigoso ir sozinho e nós estamos precisando de um mago...</p>",
+        pag2: "Logo após receber sua missão, Amon foi preparar seus itens para levar na viagem, alguns mantimentos, um livro com alguns de seus feitiços favoritos, um mapa, e um pergaminho ou dois.",
+        pag3: "Sua jornada começou pela floresta que rodiava a escola. O sol já estava quase se pondo quando Amon percebeu que havia uma fogueira acesa nas redondezas, logo viu também que havia um grupo de aventureiros montando seu acampamento.",
+        pag4: "Essa não era uma visão incomum, muitas pessoas viajavam de ponta a ponta do continente em busca de aventuras, riquesas ou os dois.",
+        pag5: "Com a mesma facilidade que Amon percebeu o grupo, eles também o perceberam.",
+        pag6: "O jovem aprendiz não era do tipo que se juntaria a um grupo de desconhecidos sem ser convidado, e ainda menos sem haver necessidade, afinal ele estava muito bem preparado para qualquer que fosse o desafio.",
+        pag7: "Entretanto, uma das aventuras não compartilhava do orgulho de Amon e foi logo o convidar para se juntar a eles.",
+        pag8: "<p class='speaker'>Clara</p><p>Olá. Essas roupas... você é um mago, não é mesmo? Você está sozinho, gostaria de se juntar a nós?</p>",
+        pag9: "<p class='speaker'>Clara</p><p>Você está indo para o monte Hagan também não está?</p>",
+        pag10: "<p class='speaker'>Clara</p><p>Você devia se juntar a nós. É perigoso ir sozinho e nós estamos precisando de um mago...</p>",
     },
     textAmon11: {
         pag1: "Amon decide continuar sozinho.",
