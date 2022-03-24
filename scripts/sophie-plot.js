@@ -21,9 +21,9 @@ function nextText(escolhas) {
     var pagina = document.getElementById("text")
 
     if (textObject[index][0] == "<") {
-        pagina.innerHTML = textObject[index];
+        pagina.innerHTML = `<article>${textObject[index]}</article>`;
     } else {
-        pagina.innerHTML = `<p>${textObject[index]}</p>`;
+        pagina.innerHTML = `<article><p>${textObject[index]}</p></article>`;
     }
 
     nextScene(sceneObject, index)
@@ -49,15 +49,28 @@ function nextScene(sceneObject, index) {
 function isLastPage(ultimaPagina, theEnd, escolhas) {
     if (theEnd) {
         var playAgain_btn = document.getElementById("nextText_btn");
-        var path = "../index.html"
+        var path = "../../index.html"
         playAgain_btn.innerHTML = `<button><a href=${path}> Jogue de novo </a> </button>`;
     } else if (ultimaPagina) {
         var choices = document.getElementById("choices");
-        choices.innerHTML =
-            `
+        if (escolhas.length == 2) {
+            choices.innerHTML =
+                `
+                <article>
                 <p>A - ${escolhas[0]}</p>
                 <p>B - ${escolhas[1]}</p>
+                </article>
             `
+        } else if (escolhas.length == 3) {
+            choices.innerHTML =
+                `
+                <article>
+                <p>A - ${escolhas[0]}</p>
+                <p>B - ${escolhas[1]}</p>
+                <p>C - ${escolhas[2]}</p>
+                </article>
+            `
+        }
         var nextText_btn = document.getElementById("nextText_btn");
         nextText_btn.innerHTML = "<button onclick=janelaDeEscolha()>Escolher</button>";
     }
@@ -173,9 +186,9 @@ var plotSophie = {
 
         pag5: "Era estranho pixies terem um copo grande o suficiênte para Sophie, mas elas tinham.Sophie não querendo fazer uma desfeita, aceitou e tomou um gole.A bebida era extremamente doce, mas a rainha parecia contente.",
 
-        pag6: "< p class= 'speaker' > Feyre < p ><p>Muito bem, agora para o seu terceiro desafio... eu quero que você jogue xadrez comigo.</p>",
+        pag6: "<p class= 'speaker'> Feyre </p><p>Muito bem, agora para o seu terceiro desafio... eu quero que você jogue xadrez comigo.</p>",
 
-        pag7: "<p class='speaker'>Feyre<p><p>Case você vença, você leva a minha tiara, mas se você perder... minha flor, você terá que passar o resto dos seus dias conosco.</p>",
+        pag7: "<p class='speaker'>Feyre</p><p>Case você vença, você leva a minha tiara, mas se você perder... minha flor, você terá que passar o resto dos seus dias conosco.</p>",
 
         pag8: "Sophie aceitou a proposta apesar do risco. O jogo começou, a cada rodada vinham duas pixies mover as peças da rainha, e mais outras para encher o copo de Sophie. A bebida era doce, doce de mais, parecia ter mais açúcar do que álcool. Sophie começou a se sentir atordoado, mas o jogo continuou, até que finalmente a rainha disse:",
 

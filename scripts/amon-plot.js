@@ -49,7 +49,7 @@ function nextScene(sceneObject, index) {
 function isLastPage(ultimaPagina, theEnd, escolhas) {
     if (theEnd) {
         var playAgain_btn = document.getElementById("nextText_btn");
-        var path = "../index.html"
+        var path = "../../index.html"
         playAgain_btn.innerHTML = `<button><a href=${path}> Jogue de novo </a> </button>`;
     } else if (ultimaPagina) {
         var choices = document.getElementById("choices");
