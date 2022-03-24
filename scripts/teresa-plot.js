@@ -37,12 +37,8 @@ function nextText(escolhas) {
 
 function nextScene(sceneObject, index) {
     if (sceneObject[index] != undefined) {
-
-        // document.querySelector('#scene').classList.toggle('fade');
         var mainElem = document.getElementById("scene");
         mainElem.innerHTML = `<img src='${sceneObject[index][1]}'>`
-        // mainElem.src = sceneObject[index][1];
-
     }
 }
 
@@ -171,7 +167,7 @@ var plotTess = {
 
         pag5: "Eu só preciso dar um cochilo, ela pensou, só um cochilo.",
 
-        pag6: "Fim - Perdida no labirinto",
+        pag6: "Fim - Para sempre no labirinto",
     },
     textTess1112: {
         pag1: "Teresa decidiu comer os frutos.",
@@ -408,7 +404,7 @@ var plotTess = {
 
         pag5: "Pouco se sabe sobre o que aconteceu com ela depois disso, mas o fato é que quando Ayla voltou e não encontrou Teresa na pousada, ela viu um novo fruto na árvore misteriosa.",
 
-        pag6: "Fim - O novo fruto",
+        pag6: "Fim - O fruto da impaciência",
 
     },
     textTess122: {
