@@ -37,12 +37,8 @@ function nextText(escolhas) {
 
 function nextScene(sceneObject, index) {
     if (sceneObject[index] != undefined) {
-
-        // document.querySelector('#scene').classList.toggle('fade');
         var mainElem = document.getElementById("scene");
         mainElem.innerHTML = `<img src='${sceneObject[index][1]}'>`
-        // mainElem.src = sceneObject[index][1];
-
     }
 }
 
@@ -53,6 +49,7 @@ function isLastPage(ultimaPagina, theEnd, escolhas) {
         playAgain_btn.innerHTML = `<button><a href=${path}> Jogue de novo </a> </button>`;
     } else if (ultimaPagina) {
         var choices = document.getElementById("choices");
+        var nextText_btn = document.getElementById("nextText_btn");
         if (escolhas.length == 2) {
             choices.innerHTML =
                 `
@@ -61,6 +58,7 @@ function isLastPage(ultimaPagina, theEnd, escolhas) {
                 <p>B - ${escolhas[1]}</p>
                 </article>
             `
+            nextText_btn.innerHTML = "<button onclick=janelaDeEscolha(2)>Escolher</button>";
         } else if (escolhas.length == 3) {
             choices.innerHTML =
                 `
@@ -70,9 +68,10 @@ function isLastPage(ultimaPagina, theEnd, escolhas) {
                 <p>C - ${escolhas[2]}</p>
                 </article>
             `
+            nextText_btn.innerHTML = "<button onclick=janelaDeEscolha(3)>Escolher</button>";
         }
-        var nextText_btn = document.getElementById("nextText_btn");
-        nextText_btn.innerHTML = "<button onclick=janelaDeEscolha()>Escolher</button>";
+
+
     }
 }
 
@@ -85,17 +84,26 @@ function isTheEnd(text) {
     return theEnd;
 }
 
-function janelaDeEscolha() {
+function janelaDeEscolha(qtdEscolhas) {
     var escolha = prompt("Qual será sua escolha?");
-    while (escolha.toUpperCase() != "A" && escolha.toUpperCase() != "B") {
-        var escolha = prompt("Escolha inválida.\nQual será sua escolha? (A ou B)");
+    if (qtdEscolhas == 2) {
+        while (escolha.toUpperCase() != "A" && escolha.toUpperCase() != "B") {
+            var escolha = prompt("Escolha inválida.\nQual será sua escolha? (A ou B)");
+        }
+    } else if (qtdEscolhas == 3) {
+        while (escolha.toUpperCase() != "A" && escolha.toUpperCase() != "B" && escolha.toUpperCase() != "C") {
+            var escolha = prompt("Escolha inválida.\nQual será sua escolha? (A ou B)");
+        }
     }
     var nextChapter_btn = document.getElementById("nextText_btn");
     if (escolha.toUpperCase() == "A") {
         choiceTree = choiceTree + 1;
         var path = `./${choiceTree}.html`
-    } else {
+    } else if (escolha.toUpperCase() == "B") {
         choiceTree = choiceTree + 2;
+        var path = `./${choiceTree}.html`
+    } else if (escolha.toUpperCase() == "C") {
+        choiceTree = choiceTree + 3;
         var path = `./${choiceTree}.html`
     }
     nextChapter_btn.innerHTML = `<button><a href=${path}> Prox pag </a> </button>`;
@@ -118,11 +126,11 @@ var plotSophie = {
         pag5: "Pixies eram criaturinhas belas como os elfos e as fadas, a natureza delas não era nem boa nem má, mas se tem algo que elas adoravam era pregar peças em todo e qualquer forasteiro. Além disso elas tinham uma a habilidade de apenas aparecer quando quisessem ser vistas, o que tornaria a missão de sophie mais difícil.",
         pag6: "Apesar de tudo isso, ela conseguiu encontrar o reino das pequeninas, as quais receberam ela com flores e festa. As coisas pareciam ir bem para o pequeno reino, tanto que todas estavam celebrando a prosperidade e cantando louvores para sua rainha, Feyre, enquanto Sophie era levada até a sala do trono.",
         pag7: "A sala do trono foi montada em cima de galhos que permitiam que uma pixia ficasse na altura dos olhos de um humano. Lá a raina estava sentada em seu trono dourado, e em sua cabeça estava a sua tiara, que para uma pessoa normal seria mais parecido com um anél.",
-        pag8: "<p class='speaker'>Feyre<p><p>O meu reino te da as boas vindas, maga. Como pode ver estamos passando por uma linda época de prosperidade, venha, dança e cante conosco.</p>",
-        pag9: "<p class='speaker'>Sophie<p><p>Muito obrigada por essa honra vossa alteza, mas eu vim até aqui pois tenho uma missão a cumprir.</p>",
+        pag8: "<p class='speaker'>Feyre</p><p>O meu reino te da as boas vindas, maga. Como pode ver estamos passando por uma linda época de prosperidade, venha, dança e cante conosco.</p>",
+        pag9: "<p class='speaker'>Sophie</p><p>Muito obrigada por essa honra vossa alteza, mas eu vim até aqui pois tenho uma missão a cumprir.</p>",
         pag10: "A rainha pareceu ficar curiosa, e Sophie falou sobre sua missão. Como a rainha adorava apostas, ela disse que primeiro, a maga deveria provar o seu valor passando por três tarefas. A primeira seria se livrar do monstro que não permitia que elas entrassem na gruta mais ao norte, a segunda seria consseguir uma garrafa de hidromel dos anões das montanhas de Darunia. A primeira missão seria fácil, mas Sophie ainda não tinha nem ideia de como passaria pela segunda.",
         pag11: "Enquanto isso, uma pixie a levava para a gruta.",
-        pag12: "<p class='speaker'>Pixie<p><p>Aqui está a gruta, senhorita Sophie. Não esqueça de trazer algo da criatura como prova de que ela forá eleminada.</p>",
+        pag12: "<p class='speaker'>Pixie</p><p>Aqui está a gruta, senhorita Sophie. Não esqueça de trazer algo da criatura como prova de que ela forá eleminada.</p>",
         pag13: "Sophie acentiu com a cabeça e a pixie partiu. Agora ela teria que descobrir que tipo de criatura ela estava prestes a enfrentar.",
         pag14: "Dentro da gruta a única fonte de luz era uma pequena fogueira, que iluminava perfeitamente uma pilha de pequenos ossos, mas sophie não conseguiu identificar o autor de tudo aquilo até que uma voz rouca e grave perguntou 'quem está ai?'",
         pag15: "<p class='speaker'>???</p><p>Eu perguntei quem está ai.</p>",
@@ -182,11 +190,11 @@ var plotSophie = {
 
         pag3: "Quando Sophie retornou para o reino das pixies, elas tornaram as festejar e a lhe dar os parabens. Apesar do hambiente alegre ao seu redor, algo que não saia de sua cabeça era o que Callon falou sobre o conflito com as fadas. Era estranho elfos e fadas se desentenderem tanto assim.",
 
-        pag4: "<p class='speaker'>Feyre<p><p>Agora sim podemos celebrar direito! Você foi incrível, querida. Vamos, beba conosco.</p>",
+        pag4: "<p class='speaker'>Feyre</p><p>Agora sim podemos celebrar direito! Você foi incrível, querida. Vamos, beba conosco.</p>",
 
         pag5: "Era estranho pixies terem um copo grande o suficiênte para Sophie, mas elas tinham.Sophie não querendo fazer uma desfeita, aceitou e tomou um gole.A bebida era extremamente doce, mas a rainha parecia contente.",
 
-        pag6: "<p class= 'speaker'> Feyre </p><p>Muito bem, agora para o seu terceiro desafio... eu quero que você jogue xadrez comigo.</p>",
+        pag6: "<p class= 'speaker'> Feyre</p><p>Muito bem, agora para o seu terceiro desafio... eu quero que você jogue xadrez comigo.</p>",
 
         pag7: "<p class='speaker'>Feyre</p><p>Case você vença, você leva a minha tiara, mas se você perder... minha flor, você terá que passar o resto dos seus dias conosco.</p>",
 
@@ -199,8 +207,8 @@ var plotSophie = {
     textSophie1112: {
         pag1: "Sophie diz que ninguém a enviou.",
         pag2: "Callon olhou desconfiado para Sophie, e tomou a irmã pelo braço, puxando-a para longe da maga. O príncipe chamou pelos guardas, que por sua vez levaram Sophie para o calabouço. Ela não ofereceu resistência, para uns isso era prova de culpa, mas para outros era a prova de que ela não deseja ferir seu povo.",
-        pag3: "<p class='speaker'>Callon<p><p>Perdoe-me, minha irmã. Mas foi necessário. Ninguém vem até uma floresta em território élfico para procurar uma bebida nativa das montanhas dos anões.</p>",
-        pag4: "<p class='speaker'>Callon<p><p>Algum dia você irá me agradecer.</p>",
+        pag3: "<p class='speaker'>Callon</p><p>Perdoe-me, minha irmã. Mas foi necessário. Ninguém vem até uma floresta em território élfico para procurar uma bebida nativa das montanhas dos anões.</p>",
+        pag4: "<p class='speaker'>Callon</p><p>Algum dia você irá me agradecer.</p>",
         pag5: "Sophie foi condenada a passar o resto de seus dias na prisão, condenada por ser espiã do inimigo, enviada para enfraquecer as defesas élficas de dentro para fora.",
         pag6: "Embora essa tenha sido sua sentença, acredita-se que Frida continuou acreditando em sua inocência, e também continuou a visitar a aprendiz. Por mais que tenha sido um destino cruel para Sophie, ela conseguiu conquistar a amizade de Frida, e ser tratada de igual para igual era tudo que a aprendiz sempre quis.",
         pag7: "Fim - Pisão doce e amarga",
@@ -208,7 +216,7 @@ var plotSophie = {
     textSophie112: {
         pag1: "Sophie decide não atacar a criatura.",
 
-        pag2: "< p class= 'speaker' > Sophie</p><p>Eu me chamo Sophie, sou aprendiz de mago.</p>",
+        pag2: "<p class= 'speaker'> Sophie</p><p>Eu me chamo Sophie, sou aprendiz de mago.</p>",
 
         pag3: "<p class='speaker'>???</p><p>E o que uma aprendiz de mago faz aqui, Sophie?</p>",
 
@@ -256,19 +264,19 @@ var plotSophie = {
 
         pag25: "Quando Sophie chegou, as pixies tornaram a festejar e a lhe dar os parabens. Apesar do hambiente alegre ao seu redor, ela não conseguia tirar da cabeça que as pixies estavam tratando tão mal Aaron simplesmente por ele ser mestiço, e ela se perguntava se as fadinhas iriam mandar matá-la também.",
 
-        pag26: "<p class='speaker'>Feyre<p><p>Agora sim podemos celebrar direito! Você foi incrível, querida. Vamos, beba conosco.</p>",
+        pag26: "<p class='speaker'>Feyre</p><p>Agora sim podemos celebrar direito! Você foi incrível, querida. Vamos, beba conosco.</p>",
 
         pag27: "Era estranho pixies terem um copo grande o suficiênte para Sophie, mas elas tinham. Sophie não querendo fazer uma desfeita, aceitou e tomou um gole. A bebida não tinha um teor alcoolico muito forte, e era doce na medida certa. Certemente era algo que agradava seu paladar, mas o medo das pixies terem colocado uma recompensa em sua cabeça a afastou do copo.",
 
-        pag28: "<p class='speaker'>Feyre<p><p>Muito bem, agora para o seu terceiro desafio... eu quero que você jogue xadrez comigo.</p>",
+        pag28: "<p class='speaker'>Feyre</p><p>Muito bem, agora para o seu terceiro desafio... eu quero que você jogue xadrez comigo.</p>",
 
-        pag29: "<p class='speaker'>Feyre<p><p>Case você vença, você leva a minha tiara, mas se você perder... minha flor, você terá que passar o resto dos seus dias conosco.</p>",
+        pag29: "<p class='speaker'>Feyre</p><p>Case você vença, você leva a minha tiara, mas se você perder... minha flor, você terá que passar o resto dos seus dias conosco.</p>",
 
         pag30: "Os riscos eram altos, mas Sophie aceitou. As suas peças eram brancas, então ela deu início a partida. Cada turno parecia demorar mais e mais, Sophie estava cada vez mais cuidadosa com seus movimentos, enquanto isso a rainha parecia apenas impaciênte.",
 
         pag31: "Vendo que Sophie estava nervosa, uma pixie preparou um chá e levou para ela.",
 
-        pag32: "<p class='speaker'>Pixie<p><p>Tome esse chá, vai te ajudar a se acalmar.</p>",
+        pag32: "<p class='speaker'>Pixie</p><p>Tome esse chá, vai te ajudar a se acalmar.</p>",
 
         pag33: "O que Sophie deve fazer?"
     },
@@ -276,7 +284,7 @@ var plotSophie = {
         pag1: "Sophie decidiu aceitar o chá.",
         pag2: "Já no primeiro gole, Sophie se sente mais calma, mais relaxada, mais focada. A pixie sentou em seu ombro e continuou assistindo a partida de lá.",
         pag3: "Aquele chá estava fazendo maravilhas, Sophie estava comendo práticamente uma peça da rainha por turno, mas também cada vez mais ela se sentia sonolenta e pesada. Finalmente faltava apenas um movimento para Sophie ganhar, só mais um e ela teria a tiara, mas quando ela foi fazer seu movimento, sua visão escureceu e seu corpo caiu no chão.",
-        pag4: "<p class='speaker'>Feyre<p><p>Xeque-mate.</p>",
+        pag4: "<p class='speaker'>Feyre</p><p>Xeque-mate.</p>",
         pag5: "Fim - Bons sonhos",
     },
     textSophie1122: {
@@ -284,11 +292,11 @@ var plotSophie = {
 
         pag2: "A aprendiz respirou fundo e continuou pensando calmamente nas suas jogadas, a cada turno a rainha ficava mais impaciênte, até que ela deixou o caminho aberto para uma peça de Sophie comer o rei. Se isso foi acidente ou não, Sophie não sabia, mas ela tinha vencido.",
 
-        pag3: "<p class='speaker'>Sophie<p><p>Xeque-mate.</p>",
+        pag3: "<p class='speaker'>Sophie</p><p>Xeque-mate.</p>",
 
         pag4: "Sophie sorriu, e a rainha aceitou sua derrota. A pixie removeu sua pequena coroa e colocou-a na mão de Sophie, no momento que a jóia tocou a sua mão, apareceu um brilho verde em seu braço esquerdo, ela tinha conseguido, finalmente ela tinha se tornado uma maga elemental.",
 
-        pag5: "<p class='speaker'>Feyre<p><p>Parabéns, querida. Você venceu. Pode ir agora.</p>",
+        pag5: "<p class='speaker'>Feyre</p><p>Parabéns, querida. Você venceu. Pode ir agora.</p>",
 
         pag6: "Sophie estava louca para sair do reino das pixies e ir até a gruta contar para Aaron, e depois ir até os elfos e mostrar a sua marca. Ela mal conseguia se conter de tanta animação enquanto deixava o pequeno reino para trás.",
 
@@ -307,17 +315,17 @@ var plotSophie = {
 
         pag3: "Sophie se aproximou.",
 
-        pag4: "<p class='speaker'>Sophie<p><p>Olá?</p>",
+        pag4: "<p class='speaker'>Sophie</p><p>Olá?</p>",
 
         pag5: "Não houve resposta.",
 
-        pag6: "<p class='speaker'>Sophie<p><p>O que você está fazendo aqui nessa floresta?</p>",
+        pag6: "<p class='speaker'>Sophie</p><p>O que você está fazendo aqui nessa floresta?</p>",
 
         pag7: "Mais uma vez não houve resposta. Então o cavaleiro fez um gesto para que Sophie o seguisse, e ela o fez. Durante a caminhada, Sophie tentou puxar assunto, perguntar quem ele era, para onde ele a estava levando, mas não obteve sucesso em nenhuma de suas tentativas.",
 
         pag8: "Quando eles pararam, ele apontou para uma passagem entre duas árvores, e então gesticulou 'pequenas' e 'asas' para Sophie.",
 
-        pag9: "<p class='speaker'>Sophie<p><p>...Pixies? Se eu seguir por aqui vou encontrar o reino das pixies? Ela pergutnou</p>",
+        pag9: "<p class='speaker'>Sophie</p><p>...Pixies? Se eu seguir por aqui vou encontrar o reino das pixies? Ela pergutnou</p>",
 
         pag10: "O cavaleiro apenas acentiu com a cabeça e foi embora, sumindo entre as árvores. Era estranho que ele soubesse que ela estava procurando o reino das pixies, mas pelo menos ele tinha ajudado ela a encontrar o caminho.",
 
@@ -327,15 +335,15 @@ var plotSophie = {
 
         pag13: "A sala do trono foi montada em cima de galhos que permitiam que uma pixia ficasse na altura dos olhos de um humano. Lá a raina estava sentada em seu trono dourado, e em sua cabeça estava a sua tiara, que para uma pessoa normal seria mais parecido com um anél.",
 
-        pag14: "<p class='speaker'>Feyre<p><p>O meu reino te da as boas vindas, maga. Como pode ver estamos passando por uma linda época de prosperidade, venha, dança e cante conosco.</p>",
+        pag14: "<p class='speaker'>Feyre</p><p>O meu reino te da as boas vindas, maga. Como pode ver estamos passando por uma linda época de prosperidade, venha, dança e cante conosco.</p>",
 
-        pag15: "<p class='speaker'>Sophie<p><p>Muito obrigada por essa honra vossa alteza, mas eu vim até aqui pois tenho uma missão a cumprir.</p>",
+        pag15: "<p class='speaker'>Sophie</p><p>Muito obrigada por essa honra vossa alteza, mas eu vim até aqui pois tenho uma missão a cumprir.</p>",
 
         pag16: "A rainha pareceu ficar curiosa, e Sophie falou sobre sua missão. Como a rainha adorava apostas, ela disse que primeiro, a maga deveria provar o seu valor passando por três tarefas. A primeira seria se livrar do monstro que não permitia que elas entrassem na gruta mais ao norte, a segunda seria consseguir uma garrafa de hidromel dos anões das montanhas de Darunia. A primeira missão seria fácil, mas Sophie ainda não tinha nem ideia de como passaria pela segunda.",
 
         pag17: "Enquanto isso, uma pixie a levava para a gruta.",
 
-        pag18: "<p class='speaker'>Pixie<p><p>Aqui está a gruta, senhorita Sophie. Não esqueça de trazer algo da criatura como prova de que ela forá eleminada.</p>",
+        pag18: "<p class='speaker'>Pixie</p><p>Aqui está a gruta, senhorita Sophie. Não esqueça de trazer algo da criatura como prova de que ela forá eleminada.</p>",
 
         pag19: "Sophie acentiu com a cabeça e a pixie partiu. Agora ela teria que descobrir que tipo de criatura ela estava prestes a enfrentar.",
 
@@ -410,7 +418,7 @@ var plotSophie = {
 
         pag4: "Sophie voltou sua atenção para o cavaleiro.",
 
-        pag5: "< p class= 'speaker' > Sophie</p><p> Você é Guillain?</p>",
+        pag5: "<p class= 'speaker'> Sophie</p><p> Você é Guillain?</p>",
 
         pag6: "<p class='speaker'>Lich</p><p> Ele não vai te responder, ou melhor ele não pode. Sua língua foi cortada antes de morrer e agora ele não possui mais a habilidade de falar. Um destino trágico.</p>",
 
@@ -424,7 +432,7 @@ var plotSophie = {
 
         pag11: "Eles se sentaram, e Sophie serviu os copos com hidromel.",
 
-        pag12: "< p class='speaker' > Lich</p ><p> Muito bem, por onde começamos. Deixe-me ver. Aaron. Aaron é uma criatura formidável, realmente formidável, mas fadado a cair em ostracismo.</p>",
+        pag12: "<p class='speaker'> Lich</p><p> Muito bem, por onde começamos. Deixe-me ver. Aaron. Aaron é uma criatura formidável, realmente formidável, mas fadado a cair em ostracismo.</p>",
 
         pag13: "<p class='speaker'>Lich</p><p> Afinal não teria como ser diferente. Sua mãe era um dragão metamorfo, sobraram poucos desses, e seu pai era um humano. A pobre criatura nasceu sem ser nem um nem outro, mas também sendo os dois.</p>",
 
@@ -464,7 +472,7 @@ var plotSophie = {
 
         pag31: "Como se os céus tivessem ouvido seu suspiros, eles mandaram Guillain para o seu encontro com uma garrafa escrito Darunium em vermelho.Sophie soltou uma risada, pensando na sua sorte, e abraçou o cavaleiro para demonstrar sua gratidão.",
 
-        pag32: "< p class='speaker' > Sophie</p><p> Quando isso tudo terminar eu gostaria de ouvir a sua história, e ajudar você como você tem me ajudado.</p>",
+        pag32: "<p class='speaker'> Sophie</p><p> Quando isso tudo terminar eu gostaria de ouvir a sua história, e ajudar você como você tem me ajudado.</p>",
 
         pag33: "Guillain acentiu com a cabeça; era difícil ler suas expressões já que a única coisa que era possível ver de seu rosto eram as duas esferas brilhantes que eram seus olhos, mas do mesmo jeito que os musculos faciais mudam a expressão dos olhos, os deles pareceram fazer algo similar.",
 
@@ -474,7 +482,7 @@ var plotSophie = {
 
         pag36: "Sophie recusou, e observou a tiara da rainha.De acordo com o Lich aquela não era a coroa que ela precisava para completar sua missão, então a coroa certa deveria estar em outro lugar.",
 
-        pag37: "< p class='speaker' > Feyre</p ><p> Muito bem, o seu terceiro desafio será.... um jogo de xadrez comigo. Se você vencer, você fica com a coroa que está em minha cabeça, mas se eu vencer você ficará aqui nessa floresta conosco, o que acha, minha querida?</p>",
+        pag37: "<p class='speaker'> Feyre</p ><p> Muito bem, o seu terceiro desafio será.... um jogo de xadrez comigo. Se você vencer, você fica com a coroa que está em minha cabeça, mas se eu vencer você ficará aqui nessa floresta conosco, o que acha, minha querida?</p>",
 
         pag38: "<p class='speaker'>Sophie</p><p> Eu aceito jogar com você, mas com a condição que eu possa escolher outro objeto do tesouro real. Afinal, não posso deixar uma rainha sem sua coroa.</p>",
 
@@ -488,13 +496,13 @@ var plotSophie = {
 
         pag43: "No jogo o rei da rainha podia estar cercado, mas na vida real quem estava cercada era Sophie.O seu próximo movimento ia resultar em um xeque - mate, mas ela perderia.",
 
-        pag44: "< p class='speaker' > Sophie</p ><p> Xeque-mate.</p>",
+        pag44: "<p class='speaker'> Sophie</p><p> Xeque-mate.</p>",
 
         pag45: "<p class='speaker'>Feyre</p><p> Parabens, minha cara, você ganhou. Contudo, eu temo que não possa deixar você ir. Guardas!</p>",
 
         pag46: "Ao seu comando, várias pixies convergiram ao redor de Sophie, enquanto outras levavam a coroa para longe.As pixies rodeavam Sophie como uma núvem de insetos, seria difícil se livrar de todas, principalmente porque Sophie era um único alvo grande e fácil para elas, mas elas eram muitas e pequenas.",
 
-        pag47: "< p class='speaker' > Feyre</p > <p> Parece que você perdeu, minha cara. Você achou que poderia me enganar, mas não pode.</p>",
+        pag47: "<p class='speaker'>Feyre</p><p> Parece que você perdeu, minha cara. Você achou que poderia me enganar, mas não pode.</p>",
 
         pag48: "A rainha estava exalando orgulho, olhando a aprendiz com desprezo.Isso é até que forão ouvidos vários gritos na distância.",
 
@@ -502,7 +510,7 @@ var plotSophie = {
 
         pag50: "Não havia tempo para comemorar ou agradecer, o reino ainda estava pegando fogo, e o fogo estava se espalhando.Então os três correram para fora do reino, e Sophie conjurou um feitiço de proteção para a área da floresta que estava em chamas.Ela isolou completamente aquela área até o momento que as chamas enfraqueceram.Quando ela desfez o feitiço, uma coluna densa de fumaça começou a subir.",
 
-        pag51: "< p class='speaker' > Sophie</p ><p> A floresta vai se recuperar, eu consigo sentir isso. Vocês dois são incríveis mesmo.</p>",
+        pag51: "<p class='speaker'>Sophie</p><p> A floresta vai se recuperar, eu consigo sentir isso. Vocês dois são incríveis mesmo.</p>",
 
         pag53: "<p class='speaker'>Aaron</p><p> Sinceramente essa é a última vez que eu me meto nas profecias do Gunther. Depois dessa eu vou me mudar para as montanhas, longe de tudo e todos.</p>",
 
