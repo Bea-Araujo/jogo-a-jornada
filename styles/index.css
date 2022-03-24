@@ -122,6 +122,12 @@ main #choices p::first-letter{
     font-size: 22px;
 }
 
+main #choices article{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
 main #nextText_btn {
     position: absolute;
     bottom: 10%;
