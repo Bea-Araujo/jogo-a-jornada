@@ -13,6 +13,22 @@ header h1 {
     font-size: 50px;
 }
 
+header .contact-info{
+    width: 7%;
+    position: absolute;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .contact-info a{
+    width: 50%;
+}
+header .contact-info a img{
+    width: 1.75rem;
+}
+
 main{
     /* background-color: rgb(102, 102, 102); */
     /* background-image: url('../images/pictures/runes.png');
