@@ -1,0 +1,62 @@
+@media (max-width:426px){
+    main{
+        align-items: center;
+        background-image: url(../images/pictures/runes.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: fit-content;
+    }
+    main section{
+        margin: 10px 0;
+    }
+    main section .title{
+        font-family: 'Great Vibes', cursive;
+        font-size: 25px;
+    }
+    
+    main section .title::before{
+        content: '꧁';
+        position: absolute;
+        left: 10%;
+        top: -5%;
+        color: black;
+    }
+    
+    main section .title::after{
+        content: '꧂';
+        position: absolute;
+        right: 10%;
+        transform: rotateX(180deg);
+        color: black;
+    }
+    
+    main #tess, main #amon, main #sophie{
+        min-width: 15rem;
+        padding: 3px;
+        border-radius: 5px;
+        backdrop-filter: blur(5px);
+        color:black;
+        transition:  1.5s;
+        border: none;
+    }
+    
+    main #tess{
+        background-color: rgba(255, 252, 70, 0.822); 
+    }
+    
+    #pick-tess-mobile, #pick-amon-mobile, #pick-sophie-mobile{
+        width: 100%;
+    }
+    main .linha-meio{
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    main #amon{
+        background-color: rgba(219, 24, 24, 0.747); 
+    }
+    
+    main #sophie{
+        background-color: rgba(144, 219, 24, 0.747);
+    }
+}

@@ -1,0 +1,46 @@
+@media only screen and (max-width:770px){
+    header .contact-info{
+        width: 10%;
+    }
+
+    main .enunc{
+        transform: translateY(150%);
+    }
+}
+
+@media (max-width:426px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .mobile{
+        display:block;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+    header{
+        flex-direction: column;
+        width: 100%;
+        z-index: 200;
+    }
+    header .contact-info{
+        width: 100%;
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px 0 0 0;
+        margin: 5px 0 0 0;
+        border-top: 1px solid white;
+    }
+
+    header .contact-info a{
+        width: fit-content;
+    }
+
+}
