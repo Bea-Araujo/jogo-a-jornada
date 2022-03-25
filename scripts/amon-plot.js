@@ -361,11 +361,11 @@ var plotAmon = {
 
 var plotScene = {
     textAmon1: {
-        pag2: ['floresta-noite', '../../images/pictures/forest1-nighttime.png'],
+        pag2: ['floresta-noite', ''],
     },
     textAmon11: {
-        pag1: ['floresta-dia', '../../images/pictures/forest1-daytime.png'],
-        pag2: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['floresta-dia', ''],
+        pag2: ['entrada-caverna', ''],
 
     },
     textAmon111: {
@@ -376,27 +376,27 @@ var plotScene = {
     },
     textAmon1112: {
         pag1: ['covil do dragão', ''],
-        pag13: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag13: ['entrada-caverna', ''],
     },
 
     textAmon112: {
-        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', ''],
         pag3: ['covil do dragão', ''],
     },
     textAmon1121: {
         pag1: ['covil do dragão', ''],
-        pag13: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag13: ['entrada-caverna', ''],
     },
     textAmon1122: {
         pag1: ['covil do dragão', ''],
     },
 
     textAmon12: {
-        pag2: ['floresta-dia', '../../images/pictures/forest1-daytime.png'],
-        pag9: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag2: ['floresta-dia', ''],
+        pag9: ['entrada-caverna', ''],
     },
     textAmon121: {
-        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', ''],
         pag17: ['covil do dragão', ''],
     },
     textAmon1211: {
@@ -404,13 +404,13 @@ var plotScene = {
     },
     textAmon1212: {
         pag1: ['covil do dragão', ''],
-        pag4: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag4: ['entrada-caverna', ''],
     },
     textAmon12121: {
-        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', ''],
     },
     textAmon12122: {
-        pag1: ['entrada-caverna', '../../images/pictures/mountain-entrance-ref.jpg'],
+        pag1: ['entrada-caverna', ''],
     },
 
     textAmon122: {
