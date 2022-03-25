@@ -33,48 +33,76 @@
 
         <section id="tess">
             <div id="light"></div>
-            <a href="./teresa/teresa-1.html">Teresa, a orgulhosa</a>
-            <div class="char-description">
+            <button onclick="cardTransform('tess')" id="tess-char-description-btn">
+                <p>Teresa, a orgulhosa</p>
+            </button>
+            <div id="tess-char-description" class="char-description hidden">
                 <article>
-                    <p>
-                        Teresa, a orgulhosa - Alguns tem a sorte de serem prodigios, contudo Teresa adquiriu seu
+                    <p>Alguns tem a sorte de serem prodigios, contudo Teresa adquiriu seu
                         conhecimento
                         com muito esforço e suor de forma que ninguém mais pode questionar sobre sua inteligência. Seus
                         anos
                         de academia foram repletos por prêmios e elogios, tornando-a em uma jovem segura de seus
                         métodos,
-                        entretanto esses anos também trouxeram consigo o orgulho.
-                        O objetivo de sua busca é encontrar a luz da vida, algo muito abstrato, contudo digno de ser o
+                        entretanto esses anos também trouxeram consigo o orgulho
+                    </p>
+                    <p>O objetivo de sua busca é encontrar a luz da vida, algo muito abstrato, contudo digno de ser o
                         desafio
                         dado pelo elemento da Luz.
-                        Deseja escolher essa campeã?
                     </p>
+                    <div class="char-picker">
+                        <p>Deseja escolher essa campeã?</p>
+                        <div class="choices">
+                            <button id="pick-tess" onclick="goToChar('teresa')">
+                                <p>Sim</p>
+                            </button>
+                            <button onclick="cardTransform('tess')">
+                                <p>Não</p>
+                            </button>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>
         <div class="linha-meio">
             <section id="amon">
                 <div id="fire"></div>
-                <a href="./amon/amon-1.html">Amon, o astuto</a>
-                <div class="char-description">
+                <button onclick="cardTransform('amon')" id="amon-char-description-btn">
+                    <p>Amon, o astuto</p>
+                </button>
+                <div id="amon-char-description" class="char-description hidden">
                     <article>
                         <p>
-                            Amon, o astuto - Nenhuma pessoa que entrou em seu caminho, continuou nele por muito tempo.
+                            Nenhuma pessoa que entrou em seu caminho, continuou nele por muito tempo.
                             Pouco se sabe sobre esse aprendiz, apenas que forá um prodigio desde o seu egresso na
                             academia.
                             Reza a lenda que ele costumava ser mais amigável, contudo se tornou amargo da noite para o
                             dia.
+                        </p>
+                        <p>
                             Sua missão é resgatar um ovo de dragão, rodeado por pscinas de lava nas profundesas da
                             montanha Hagan.
-                            Deseja escolher esse campeão?
                         </p>
+                        <div class="char-picker">
+                            <p>Deseja escolher esse campeão?</p>
+                            <div class="choices">
+                                <button id="pick-amon" onclick="goToChar('amon')">
+                                    <p>Sim</p>
+                                </button>
+                                <button onclick="cardTransform('amon')">
+                                    <p>Não</p>
+                                </button>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </section>
             <section id="sophie">
                 <div id="earth"></div>
-                <a href="./sophie/sophie-1.html">Sophie, a gentil</a>
-                <div class="char-description">
+                <button onclick="cardTransform('sophie')" id="sophie-char-description-btn">
+                    <p>Sophie, a gentil</p>
+                </button>
+                <div id="sophie-char-description" class="char-description hidden">
                     <article>
                         <p>
                             Sophie, a gentil - Sendo descendente dos orgulhosos elfos, Sophie herdou o apego à natureza.
@@ -82,11 +110,23 @@
                             o mal,
                             sua aparência elfica fez com que criaturas da floresta fossem inesplicavelmente atraídos por
                             ela.
+                        </p>
+                        <p>
                             Seu desafio é tomar a tiara da rainha das pixies da floresta, criaturinhas belas porém
                             vaidosas e
                             traiçoeiras.
-                            Deseja escolher essa campeã?
                         </p>
+                        <div class="char-picker">
+                            <p>Deseja escolher essa campeã?</p>
+                            <div class="choices">
+                                <button id="pick-sophie" onclick="goToChar('sophie')">
+                                    <p>Sim</p>
+                                </button>
+                                <button onclick="cardTransform('sophie')">
+                                    <p>Não</p>
+                                </button>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </section>
@@ -99,7 +139,8 @@
     <footer>
 
     </footer>
-    <script src="./scripts/index.js"></script>
+
+    <script src="../scripts/character-selection.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,7 @@
+.hidden {
+    display: none;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -8,17 +12,20 @@ main{
     background-size: contain;
 }
 
-main p{
-    font-family: 'Great Vibes', cursive;
-    font-size: 25px;
-    color: white;
+main button{
     padding: 3px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.747);
     backdrop-filter: blur(5px);
     color:black;
     transition:  1.5s;
-    text-decoration: none;
+    border: none;
+}
+
+main button p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 main .linha-meio{
@@ -26,13 +33,12 @@ main .linha-meio{
     display: flex;
     justify-content: space-evenly;
 }
+
 main section a{
-    /* position: absolute; */
     font-family: 'Great Vibes', cursive;
     font-size: 25px;
     padding: 5px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.747);
     backdrop-filter: blur(5px);
     color:black;
     transition:  1.5s;
@@ -41,24 +47,75 @@ main section a{
 
 main #sophie, main #amon, main #tess{
     position: relative;
-}
-
-main #tess{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main #tess div article{
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 110%;
-    min-width: 700px;
+main #tess .showing-tess{
+    transform: translateY(-100px);
 }
 
-main #tess div article p{
-    background: linear-gradient(rgba(238, 255, 0, 0.822), rgba(248, 255, 148, 0.664));
+main #tess .showing-light{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -550%);  
+}
+
+main #tess .char-description{
+    position: absolute;
+    top: -150%;
+    min-width: 50rem;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(255, 252, 70, 0.822);
+    backdrop-filter: blur(5px);
+    color:black;
+    transition:  1.5s;
+    border: none;
+}
+
+main section article > p{
+    margin: 5px 0;
+}
+
+main section article p::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+
+main section .char-picker{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.char-picker > .choices{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.char-picker > .choices button{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.char-picker > .choices button:hover{
+    background-color: rgba(61, 61, 61, 0.747);
+}
+.char-picker > .choices button:focus{
+    background-color: rgba(14, 14, 14, 0.747);
+}
+
+.char-picker > .choices button p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    width: 100%;
 }
 
 main #light{
@@ -72,28 +129,17 @@ main #light{
     top: 50%;
     transform: translate(-50%, -50%);   
     animation: shineYellow 4s infinite ease-in-out;
+    transition:  1.5s;
 }
 
-main #tess a:hover{
-    background-color: rgba(255, 255, 1, 0.822);
+main #tess-char-description-btn{
+    background-color: rgba(207, 204, 35, 0.822);
 }
 
-main #earth{
-    content: "";
-    background-color: rgb(225, 255, 52);
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);   
-    animation: shineGreen 4s infinite ease-in-out;
+main #tess-char-description-btn:hover{
+    background-color: rgba(240, 255, 24, 0.822) !important;
 }
 
-main #sophie a:hover{
-    background-color: rgba(104, 167, 2, 0.822);
-}
 
 main #fire{
     content: "";
@@ -106,37 +152,97 @@ main #fire{
     top: 50%;
     transform: translate(-50%, -50%);  
     animation: shineRed 4s infinite ease-in-out;
+    transition:  1.5s;
 }
 
-main #amon a:hover{
-    background-color: rgba(167, 2, 2, 0.822);
-}
-
-main #amon div article{
+main #amon .char-description{
     position: absolute;
-    right: 0%;
-    top: 130%;
-    min-width: 300px;
+    left: -190%;
+    min-width: 27rem;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(219, 24, 24, 0.747);
+    backdrop-filter: blur(5px);
+    color:black;
+    transition:  1.5s;
+    border: none;
 }
 
-main #amon div article p{
-    background: linear-gradient(rgba(167, 2, 2, 0.822), rgba(255, 255, 0, 0.664));
+main #amon .showing-amon{
+    transform: translateY(-110%);
 }
 
-main #sophie div article{
+main #amon .showing-fire{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -260%);  
+}
+
+main #amon-char-description-btn{
+    background-color: rgba(146, 0, 0, 0.822);
+}
+
+main #amon-char-description-btn:hover{
+    background-color: rgba(218, 0, 0, 0.822) !important;
+}
+
+
+
+main #earth{
+    content: "";
+    background-color: rgb(225, 255, 52);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
     position: absolute;
-    left: 0%;
-    top: 130%;
-    min-width: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);   
+    animation: shineGreen 4s infinite ease-in-out;
+    transition:  1.5s;
 }
 
-main #sophie div article p{
-    background: linear-gradient(rgba(21, 167, 2, 0.822), rgba(179, 255, 0, 0.664));
+main #sophie .char-description{
+    position: absolute;
+    left: -55%;
+    min-width: 27rem;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(144, 219, 24, 0.747);
+    backdrop-filter: blur(5px);
+    color:black;
+    transition:  1.5s;
+    border: none;
 }
 
-main section div article p{
-    font-size: 16px;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+main #sophie .showing-sophie{
+    transform: translateY(-110%);
+}
+
+main #sophie .showing-earth{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -260%);  
+}
+
+main #sophie-char-description-btn{
+    background-color: rgba(103, 165, 3, 0.747);
+}
+
+main #sophie-char-description-btn:hover{
+    background-color: rgba(116, 218, 0, 0.822) !important;
+}
+
+main > p{
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.747);
+    backdrop-filter: blur(5px);
+    color:black;
+    transition:  1.5s;
+    border: none;
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
 }
 
 @keyframes shineRed{
@@ -191,3 +297,4 @@ main section div article p{
                     0 0 17px 29px rgb(254, 255, 169);
                     }
         }
+
